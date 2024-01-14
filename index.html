@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+
+		<title>W-9 Crafter</title>
+
+		<script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+		<script src="https://unpkg.com/downloadjs@1.4.7"></script>
+		<style>
+			html {
+				font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+				font-size: 1.3em;
+				max-width: 40rem;
+				padding: 2rem;
+				margin: auto;
+				line-height: 1.5rem;
+			}
+			button {
+				padding: 0.5rem;
+				border-radius: 0.5rem;
+				border: 2px solid #000;
+				background-color: #000;
+				color: #fff;
+				cursor: pointer;
+				font-size: 0.8em;
+			}
+			button:hover {
+				background-color: #fff;
+				color: #000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>W-9 Crafter</h1>
+		<p>
+			Click the button to get your W-9, ya filthy animal. <br />
+			(It will be downloaded to your computer)
+		</p>
+		<button onclick="modifyPdf()">Gimme today's W-9</button>
+	</body>
+
+	<script src="./craft.js"></script>
+</html>
