@@ -1,0 +1,14 @@
+{
+	"name": "w9-crafter",
+	"version": "1.0.0",
+	"description": "A tool to generate Form W-9s",
+	"main": "electron.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "cassidoo",
+	"license": "MIT",
+	"dependencies": {
+		"menubar": "^9.4.0"
+	}
+}
