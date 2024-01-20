@@ -1,43 +1,24 @@
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
-
 		<title>W-9 Crafter</title>
-
 		<script src="https://unpkg.com/pdf-lib@1.4.0"></script>
 		<script src="https://unpkg.com/downloadjs@1.4.7"></script>
-		<style>
-			html {
-				font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-				font-size: 1.3em;
-				max-width: 40rem;
-				padding: 2rem;
-				margin: auto;
-				line-height: 1.5rem;
-			}
-			button {
-				padding: 0.5rem;
-				border-radius: 0.5rem;
-				border: 2px solid #000;
-				background-color: #000;
-				color: #fff;
-				cursor: pointer;
-				font-size: 0.8em;
-			}
-			button:hover {
-				background-color: #fff;
-				color: #000;
-			}
-		</style>
+		<link rel="stylesheet" href="./style.css" />
 	</head>
 
 	<body>
 		<h1>W-9 Crafter</h1>
-		<p>
-			Click the button to get your W-9, ya filthy animal. <br />
-			(It will be downloaded to your computer)
-		</p>
-		<button onclick="modifyPdf()">Gimme today's W-9</button>
+		<p>Get a W-9 (rev 2018) with today's date.</p>
+		<button type="button" onclick="modifyPdf()">Click here</button>
+		<div>
+			<img src="./tree.png" alt="tree" />
+			<p class="instructions">
+				Save a W-9 to the folder where this app is with everything filled in
+				except for the date. Now you can click the button above to get a W-9
+				with today's date whenever you want!
+			</p>
+		</div>
 	</body>
 
 	<script src="./craft.js"></script>
