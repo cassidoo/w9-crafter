@@ -2,12 +2,17 @@ html {
 	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	font-size: 1.3em;
 	max-width: 40rem;
-	padding: 1rem 2rem 0;
+	padding: 0.5rem 1rem;
 	margin: auto;
-	background: #e0e5ec;
+	overflow: hidden;
+}
+
+h1 {
+	margin: 0;
 }
 
 p {
+	margin: 0.5rem 0 1rem;
 	color: #676767;
 }
 
@@ -15,65 +20,47 @@ div {
 	position: fixed;
 }
 
-div:hover .instructions {
-	display: block;
-}
-
 .instructions {
-	display: none;
 	font-size: 0.7em;
 	line-height: 1.2em;
-	padding-top: 20px;
-	padding-right: 100px;
+	padding-top: 10px;
+	padding-right: 120px;
 }
 
 img {
 	position: fixed;
-	bottom: 0;
-	right: 20px;
-	width: 80px;
+	bottom: -3px;
+	right: -80px;
+	width: 200px;
 	transition: all 0.3s ease;
-}
-
-img:hover {
-	width: 90px;
-	right: 15px;
-	cursor: pointer;
 }
 
 button {
-	position: relative;
-	display: inline-block;
-	border-radius: 5px;
-	padding: 10px 25px;
-	background: transparent;
-	font-size: 0.8em;
-	font-weight: bold;
+	width: 200px;
+	height: 55px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	color: #fff;
 	cursor: pointer;
-	box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-		7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-	outline: none;
+	background-size: 300% 100%;
+	background-image: linear-gradient(
+		to right,
+		#00ae90,
+		#00b295,
+		#00ba9c,
+		#2bb673
+	);
 	border: none;
-	transition: all 0.3s ease;
+	border-radius: 50px;
+	box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+	transition: all 0.4s ease-in-out;
 }
-button:after {
-	position: absolute;
-	content: "";
-	width: 0;
-	height: 100%;
-	top: 0;
-	left: 0;
-	direction: rtl;
-	z-index: -1;
-	box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
-		7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
-	transition: all 0.3s ease;
+
+button:hover {
+	background-position: 100% 0;
+	transition: all 0.4s ease-in-out;
 }
-button:hover:after {
-	left: auto;
-	right: 0;
-	width: 100%;
-}
-button:active {
-	top: 2px;
+
+button:focus {
+	outline: none;
 }
