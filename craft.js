@@ -1,7 +1,9 @@
 const { degrees, PDFDocument, rgb } = PDFLib;
 
+let pathUrl = "";
+
 async function modifyPdf() {
-	const url = "./fw9-filled.pdf";
+	const url = pathUrl;
 	const existingPdfBytes = await fetch(url).then((res) => res.arrayBuffer());
 
 	const pdfDoc = await PDFDocument.load(existingPdfBytes);
@@ -24,4 +26,10 @@ async function modifyPdf() {
 	const pdfBytes = await pdfDoc.save();
 
 	download(pdfBytes, `w9-${localDate.replaceAll("/", "-")}`, "application/pdf");
+}
+
+function getPath() {
+	let path = document.getElementById("file").files[0].path;
+	document.getElementById("path").innerHTML = path;
+	pathUrl = path;
 }
