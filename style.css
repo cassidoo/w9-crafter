@@ -20,7 +20,7 @@ div {
 	position: fixed;
 }
 
-.instructions {
+details {
 	font-size: 0.7em;
 	line-height: 1.2em;
 	padding-top: 10px;

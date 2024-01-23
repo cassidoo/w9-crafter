@@ -9,19 +9,31 @@
 
 	<body>
 		<h1>W-9 Crafter</h1>
-		<p>Quickly crafts a W-9 (rev 2018) with today's date.</p>
-		<button type="button" onclick="modifyPdf()">Get today's W-9</button>
+		<p>Quickly craft a W-9 (rev 2018) with today's date.</p>
+		<button type="button" id="today" onclick="modifyPdf()">
+			Get today's W-9
+		</button>
 		<div>
 			<img src="./tree.png" alt="tree" />
-			<p class="instructions">
-				Save a W-9 to the folder where this app is with
-				<strong>everything filled in except for the date</strong>. <br />
-				Now you can click the button above to get a W-9 with today's date
-				whenever you want!
-			</p>
-			<input type="file" id="file" />
-			<button onclick="getPath()">path</button>
-			<span id="path"></span>
+
+			<section id="path">
+				<input type="file" accept=".pdf" id="file" />
+				<button onclick="getPath()">Use this file</button>
+				<!-- <span id="path"></span> -->
+			</section>
+
+			<details>
+				<summary>
+					<strong>Instructions</strong>
+				</summary>
+				<p class="instructions">
+					Save a W-9 to the folder where this app is with
+					<strong>everything filled in except for the date</strong>. <br />
+					Now you can click the button above to get a W-9 with today's date
+					whenever you want!
+					<strong>It won't mess up the original file.</strong>
+				</p>
+			</details>
 		</div>
 	</body>
 
