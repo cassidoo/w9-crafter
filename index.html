@@ -10,17 +10,40 @@
 	<body>
 		<h1>W-9 Crafter</h1>
 		<p>Quickly craft a W-9 (rev 2018) with today's date.</p>
-		<button type="button" id="today" onclick="modifyPdf()">
-			Get today's W-9
-		</button>
-		<div>
-			<img src="./tree.png" alt="tree" />
 
-			<section id="path">
+		<div class="tabs">
+			<button
+				class="tablinks"
+				onclick="openTab(event, 'make')"
+				id="defaultOpen"
+			>
+				Make a W-9
+			</button>
+			<button class="tablinks" onclick="openTab(event, 'update')">
+				Update the path
+			</button>
+		</div>
+
+		<div id="make" class="tabcontent">
+			<button type="button" id="today" onclick="modifyPdf()">
+				Get today's W-9
+			</button>
+		</div>
+
+		<div id="update" class="tabcontent">
+			<p>
+				<strong>Current path:</strong>
+				<span id="path"></span>
+			</p>
+			<p>
+				<strong>Update path:</strong>
 				<input type="file" accept=".pdf" id="file" />
 				<button onclick="getPath()">Use this file</button>
-				<!-- <span id="path"></span> -->
-			</section>
+			</p>
+		</div>
+
+		<div>
+			<img src="./tree.png" alt="tree" />
 
 			<details>
 				<summary>

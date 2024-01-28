@@ -17,7 +17,7 @@ p {
 }
 
 div {
-	position: fixed;
+	/* position: fixed; */
 }
 
 details {
@@ -63,4 +63,49 @@ button:hover {
 
 button:focus {
 	outline: none;
+}
+
+.tabs {
+	position: relative;
+	display: inline-block;
+	background: #f2f2f2;
+	border-radius: 50px;
+}
+
+.tabs::before {
+	display: block;
+	content: "";
+	background: #fff;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 200px;
+	height: 50px;
+	border-radius: 50px;
+	transition: all 0.3s ease;
+}
+
+.tabs.right::before {
+	left: 204px;
+}
+
+.tablinks {
+	position: relative;
+	color: #000;
+	background: transparent;
+	box-shadow: none;
+	z-index: 10;
+}
+
+.tablinks:not(.active) {
+	background: transparent;
+	color: #616161;
+}
+
+.tabcontent {
+	display: none;
+}
+
+.tabcontent.active {
+	display: block;
 }

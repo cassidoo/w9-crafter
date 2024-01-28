@@ -47,6 +47,9 @@ async function modifyPdf() {
 
 function openTab(event, tabName) {
 	let i, tabcontent, tablinks;
+	let container = document.getElementsByClassName("tabs")[0];
+	let element = event.currentTarget;
+	let currentTabIndex = [...element.parentElement.children].indexOf(element);
 
 	tabcontent = document.getElementsByClassName("tabcontent");
 	for (i = 0; i < tabcontent.length; i++) {
@@ -57,6 +60,12 @@ function openTab(event, tabName) {
 	for (i = 0; i < tablinks.length; i++) {
 		tablinks[i].className = tablinks[i].className.replace(" active", "");
 		tablinks[i].classList.remove("active");
+	}
+
+	if (currentTabIndex === 0) {
+		container.classList.remove(`right`);
+	} else {
+		container.classList.add(`right`);
 	}
 
 	document.getElementById(tabName).classList.add("active");
