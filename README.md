@@ -10,6 +10,6 @@ Now, here is a solution: a button.
 
 - Download this repository or clone it
 - Fill out the form `fw9-blank.pdf` with everything except for the date and save it as `fw9-filled.pdf`
-- Run `python -m http.server` to run the "app" because CORS won't let you download anything by just opening the HTML file
+- `npm install` and then `npm start`
 - Click the button whenever you want a W-9
 - Be free, at last
