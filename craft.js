@@ -1,22 +1,44 @@
 const { degrees, PDFDocument, rgb } = PDFLib;
 
 let pathUrl = "";
+let pathButton = document.getElementById("updatepathbutton");
+let makeButton = document.getElementById("makebutton");
 
 (function () {
 	checkForPath();
 	document.getElementById("file").addEventListener("change", () => {
 		pathUrl = document.getElementById("file").files[0].path;
+		savePath();
 	});
 })();
 
 function checkForPath() {
 	if (localStorage.getItem("path")) {
 		pathUrl = localStorage.getItem("path");
+		document.getElementById("path").innerHTML = prependPathUrl();
+	} else {
+		document.getElementById("currentpath").style.display = "none";
+		pathButton.click();
+		pathButton.innerText = "Pick W-9 path";
+		makeButton.disabled = true;
 	}
 }
 
 function savePath() {
 	localStorage.setItem("path", pathUrl);
+
+	document.getElementById("path").innerHTML = prependPathUrl();
+	document.getElementById("currentpath").style.display = "block";
+	pathButton.innerText = "Update W-9 path";
+	makeButton.disabled = false;
+}
+
+function prependPathUrl() {
+	let prependedPathUrl = pathUrl;
+	if (pathUrl.length > 36) {
+		prependedPathUrl = `...${pathUrl.slice(-36)}`;
+	}
+	return prependedPathUrl;
 }
 
 async function modifyPdf() {

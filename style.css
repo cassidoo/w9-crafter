@@ -12,19 +12,29 @@ h1 {
 }
 
 p {
-	margin: 0.5rem 0 1rem;
+	margin: 0.5rem 0 0.8rem;
 	color: #676767;
 }
 
-div {
-	/* position: fixed; */
+p#currentpath {
+	font-size: 0.7em;
+	line-height: 1.2em;
+	margin-bottom: 0;
+}
+
+p#currentpath strong {
+	color: #000000;
 }
 
 details {
 	font-size: 0.7em;
 	line-height: 1.2em;
 	padding-top: 10px;
-	padding-right: 120px;
+	padding-right: 90px;
+}
+
+summary {
+	cursor: pointer;
 }
 
 img {
@@ -35,7 +45,23 @@ img {
 	transition: all 0.3s ease;
 }
 
-button {
+input[type="file"] {
+	display: none;
+}
+
+.mb {
+	margin-bottom: 20px;
+}
+
+.path-picker {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button,
+.path-picker {
 	width: 200px;
 	height: 55px;
 	font-size: 0.8rem;
@@ -56,7 +82,8 @@ button {
 	transition: all 0.4s ease-in-out;
 }
 
-button:hover {
+button:hover,
+.path-picker:hover {
 	background-position: 100% 0;
 	transition: all 0.4s ease-in-out;
 }
@@ -65,9 +92,14 @@ button:focus {
 	outline: none;
 }
 
+button:disabled {
+	cursor: not-allowed;
+}
+
 .tabs {
 	position: relative;
 	display: inline-block;
+	margin-bottom: 20px;
 	background: #f2f2f2;
 	border-radius: 50px;
 }
@@ -79,19 +111,20 @@ button:focus {
 	position: absolute;
 	top: 2px;
 	left: 2px;
-	width: 200px;
+	width: 178px;
 	height: 50px;
 	border-radius: 50px;
 	transition: all 0.3s ease;
 }
 
 .tabs.right::before {
-	left: 204px;
+	left: 182px;
 }
 
-.tablinks {
+button.tablinks {
 	position: relative;
-	color: #000;
+	width: 178px;
+	color: #000000;
 	background: transparent;
 	box-shadow: none;
 	z-index: 10;
