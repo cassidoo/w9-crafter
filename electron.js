@@ -3,7 +3,7 @@ const { menubar } = require("menubar");
 const mb = menubar({
 	browserWindow: {
 		width: 420,
-		height: 480,
+		height: 520,
 	},
 	icon: "./icon.png",
 	tooltip: "W-9 Crafter",
