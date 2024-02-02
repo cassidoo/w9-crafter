@@ -5,7 +5,7 @@ const mb = menubar({
 		width: 420,
 		height: 520,
 	},
-	icon: "./icon.png",
+	icon: "./extraResources/icon.png",
 	tooltip: "W-9 Crafter",
 });
 

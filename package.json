@@ -7,9 +7,14 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "npx electron electron.js"
 	},
-	"author": "cassidoo",
+	"author": "cassidoo (https://cassidoo.co)",
 	"license": "MIT",
 	"dependencies": {
 		"menubar": "^9.4.0"
+	},
+	"build": {
+		"extraResources": [
+			"./extraResources/**"
+		]
 	}
 }
