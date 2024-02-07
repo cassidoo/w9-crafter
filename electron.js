@@ -3,8 +3,8 @@ const path = require("path");
 
 const mb = menubar({
 	browserWindow: {
-		width: 420,
-		height: 520,
+		width: 425,
+		height: 515,
 	},
 	icon: path.join(__dirname, "extraResources", "icon.png"),
 	tooltip: "W-9 Crafter",
