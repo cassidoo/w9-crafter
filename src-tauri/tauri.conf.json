@@ -1,0 +1,37 @@
+{
+	"productName": "W-9 Crafter",
+	"version": "1.0.0",
+	"identifier": "cassidoo.w9-crafter",
+	"build": {
+		"frontendDist": "../src"
+	},
+	"app": {
+		"withGlobalTauri": true,
+		"windows": [
+			{
+				"fullscreen": false,
+				"resizable": false,
+				"title": "W-9 Crafter",
+				"width": 425,
+				"height": 515
+			}
+		],
+		"security": {
+			"csp": null
+		}
+	},
+	"bundle": {
+		"active": true,
+		"targets": "all",
+		"icon": [
+			"icons/icon.png",
+			"icons/icon@2x.png",
+			"icons/appicon128.png",
+			"icons/appicon256.png",
+			"icons/appicon512.png",
+			"icons/appicon.png",
+			"icons/appicon.icns",
+			"icons/appicon.ico"
+		]
+	}
+}

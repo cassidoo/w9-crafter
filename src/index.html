@@ -12,7 +12,7 @@
 		<p>Quickly craft a W-9 (rev 2018) with today's date.</p>
 
 		<!-- For development:
-		<button onclick="localStorage.removeItem('path')">clear</button> -->
+		<button onclick="localStorage.removeItem('path')">clear</button>-->
 		<div class="tabs">
 			<button
 				class="tablinks"
@@ -38,8 +38,7 @@
 		</div>
 
 		<div id="update" class="tabcontent">
-			<input type="file" accept=".pdf" id="file" />
-			<label for="file" class="path-picker mb">Where is your W-9? </label>
+			<button id="pick-me">Where is your W-9?</button>
 			<p id="currentpath">
 				<strong>Current W-9 location:</strong> <br />
 				<span id="path"></span>
@@ -47,7 +46,7 @@
 		</div>
 
 		<div>
-			<img src="./tree.png" alt="tree" />
+			<img src="./tree.avif" alt="tree" />
 
 			<details open>
 				<summary>

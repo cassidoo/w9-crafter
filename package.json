@@ -1,20 +1,15 @@
 {
 	"name": "w9-crafter",
 	"version": "1.0.0",
-	"description": "A tool to generate Form W-9s",
-	"main": "electron.js",
+	"description": "A tool to generate Form W-9s quickly!",
+	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "npx electron electron.js"
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"author": "cassidoo (https://cassidoo.co)",
-	"license": "MIT",
+	"author": "",
+	"license": "ISC",
 	"dependencies": {
-		"menubar": "^9.4.0"
-	},
-	"build": {
-		"extraResources": [
-			"./extraResources/**"
-		]
+		"@tauri-apps/plugin-dialog": "^2.0.0-beta.2",
+		"@tauri-apps/plugin-fs": "^2.0.0-beta.2"
 	}
 }

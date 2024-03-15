@@ -1,3 +1,6 @@
+const { invoke } = window.__TAURI__.core;
+const { open } = window.__TAURI__.dialog;
+const { readFile } = window.__TAURI__.fs;
 const { degrees, PDFDocument, rgb } = PDFLib;
 
 let pathUrl = "";
@@ -6,11 +9,18 @@ let makeButton = document.getElementById("makebutton");
 
 (function () {
 	checkForPath();
-	document.getElementById("file").addEventListener("change", () => {
-		pathUrl = document.getElementById("file").files[0].path;
-		savePath();
-	});
+	document.getElementById("pick-me").addEventListener("click", openDialog);
 })();
+
+async function openDialog() {
+	const file = await open({
+		multiple: false,
+		directory: false,
+	});
+	pathUrl = file.path;
+	savePath();
+	console.log(file.path);
+}
 
 function checkForPath() {
 	if (localStorage.getItem("path")) {
@@ -43,7 +53,7 @@ function prependPathUrl() {
 
 async function modifyPdf() {
 	const url = pathUrl;
-	const existingPdfBytes = await fetch(url).then((res) => res.arrayBuffer());
+	const existingPdfBytes = await readFile(url);
 
 	const pdfDoc = await PDFDocument.load(existingPdfBytes);
 	const pages = pdfDoc.getPages();
