@@ -13,8 +13,8 @@ let makeButton = document.getElementById("makebutton");
 })();
 
 async function openDialog() {
-	console.log("wow");
 	const file = await open({
+		title: "Select your filled Form W-9",
 		multiple: false,
 		directory: false,
 		filters: [
@@ -26,7 +26,6 @@ async function openDialog() {
 	});
 	pathUrl = file.path;
 	savePath();
-	console.log(file.path);
 }
 
 function checkForPath() {
