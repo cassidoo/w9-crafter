@@ -13,9 +13,16 @@ let makeButton = document.getElementById("makebutton");
 })();
 
 async function openDialog() {
+	console.log("wow");
 	const file = await open({
 		multiple: false,
 		directory: false,
+		filters: [
+			{
+				name: "PDF",
+				extensions: ["pdf"],
+			},
+		],
 	});
 	pathUrl = file.path;
 	savePath();
