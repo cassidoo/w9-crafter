@@ -1,8 +1,8 @@
 [package]
 name = "w9-crafter"
 version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+description = "A tool to generate Form W-9s quickly!"
+authors = ["cassidoo"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
