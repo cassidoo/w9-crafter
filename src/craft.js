@@ -26,6 +26,10 @@ async function openDialog() {
 	});
 	pathUrl = file.path;
 	savePath();
+
+	setTimeout(() => {
+		openTab({ currentTarget: makeButton }, "make");
+	}, 500);
 }
 
 function checkForPath() {
@@ -35,7 +39,7 @@ function checkForPath() {
 	} else {
 		document.getElementById("currentpath").style.display = "none";
 		pathButton.click();
-		pathButton.innerText = "Pick W-9 path";
+		pathButton.innerText = "Locate a W-9";
 		makeButton.disabled = true;
 	}
 }
@@ -45,7 +49,7 @@ function savePath() {
 
 	document.getElementById("path").innerHTML = prependPathUrl();
 	document.getElementById("currentpath").style.display = "block";
-	pathButton.innerText = "Update W-9 path";
+	pathButton.innerText = "Locate a W-9";
 	makeButton.disabled = false;
 }
 
@@ -74,7 +78,7 @@ async function modifyPdf() {
 
 	firstPage.drawText(localDate, {
 		x: 420,
-		y: 232,
+		y: 195,
 		size: 12,
 	});
 
@@ -107,5 +111,5 @@ function openTab(event, tabName) {
 	}
 
 	document.getElementById(tabName).classList.add("active");
-	event.currentTarget.classList.add("active");
+	element.classList.add("active");
 }
