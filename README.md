@@ -1,10 +1,16 @@
-# W-9 Crafter
+# W-9 Crafter 🌳
 
 If you are a contractor or do freelancing or something in the United States, you'll probably be asked for a W-9 at some point.
 
 I got annoyed with having to fill it out every time I was asked.
 
 Now, here is a solution: a button.
+
+## Buying the app
+
+Yes, this app is open source and you can run it to your heart's content. But, it'd be reeeeally cool if you bought the final product and supported a lil indie dev like me!
+
+[Buy it here 🌳](https://cass.run/w9)
 
 ## How to use this
 
