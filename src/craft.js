@@ -1,15 +1,19 @@
 const { invoke } = window.__TAURI__.core;
 const { open } = window.__TAURI__.dialog;
-const { readFile } = window.__TAURI__.fs;
+const { readFile, writeFile, BaseDirectory, exists } = window.__TAURI__.fs;
 const { degrees, PDFDocument, rgb } = PDFLib;
 
 let pathUrl = "";
 let pathButton = document.getElementById("updatepathbutton");
 let makeButton = document.getElementById("makebutton");
+let craftButton = document.getElementById("craft");
+let pickButton = document.getElementById("pick");
+let craftText = `Craft today's W-9`;
+let pickText = `Where is your W-9?`;
 
 (function () {
 	checkForPath();
-	document.getElementById("pick-me").addEventListener("click", openDialog);
+	pickButton.addEventListener("click", openDialog);
 })();
 
 async function openDialog() {
@@ -27,9 +31,16 @@ async function openDialog() {
 	pathUrl = file.path;
 	savePath();
 
+	pickButton.classList.add("pulse");
+	pickButton.innerText = "Saved!";
+	setTimeout(() => {
+		pickButton.classList.remove("pulse");
+		pickButton.innerText = pickText;
+	}, 2000);
+
 	setTimeout(() => {
 		openTab({ currentTarget: makeButton }, "make");
-	}, 500);
+	}, 2000);
 }
 
 function checkForPath() {
@@ -84,7 +95,39 @@ async function modifyPdf() {
 
 	const pdfBytes = await pdfDoc.save();
 
-	download(pdfBytes, `w9-${localDate.replaceAll("/", "-")}`, "application/pdf");
+	let fileName = `w9-${localDate.replaceAll("/", "-")}`;
+
+	try {
+		fileName = await doesFileExist(fileName);
+
+		await writeFile(fileName + ".pdf", pdfBytes, {
+			baseDir: BaseDirectory.Download,
+		});
+
+		craftButton.classList.add("pulse");
+		craftButton.innerText = "Saved!";
+		setTimeout(() => {
+			craftButton.classList.remove("pulse");
+			craftButton.innerText = craftText;
+		}, 2000);
+	} catch (error) {
+		console.error(error);
+	}
+}
+async function doesFileExist(fileName) {
+	let fileExists = await exists(fileName + ".pdf", {
+		baseDir: BaseDirectory.Download,
+	});
+
+	let fileCounter = 0;
+	while (fileExists) {
+		fileCounter++;
+		fileExists = await exists(fileName + `-${fileCounter}.pdf`, {
+			baseDir: BaseDirectory.Download,
+		});
+	}
+
+	return fileCounter > 0 ? fileName + `-${fileCounter}` : fileName;
 }
 
 function openTab(event, tabName) {

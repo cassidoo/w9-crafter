@@ -3,7 +3,6 @@
 		<meta charset="utf-8" />
 		<title>W-9 Crafter</title>
 		<script src="./pdf-lib.min.js"></script>
-		<script src="./download.min.js"></script>
 		<link rel="stylesheet" href="./style.css" />
 	</head>
 
@@ -33,13 +32,13 @@
 		</div>
 
 		<div id="make" class="tabcontent active">
-			<button type="button" id="today" class="mb" onclick="modifyPdf()">
+			<button type="button" id="craft" class="mb" onclick="modifyPdf()">
 				Craft today's W-9
 			</button>
 		</div>
 
 		<div id="update" class="tabcontent">
-			<button id="pick-me">Where is your W-9?</button>
+			<button id="pick">Where is your W-9?</button>
 			<p id="currentpath">
 				<strong>Current W-9 location:</strong> <br />
 				<span id="path"></span>

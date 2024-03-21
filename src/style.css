@@ -65,7 +65,6 @@ input[type="file"] {
 }
 
 .path-picker {
-	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -73,6 +72,7 @@ input[type="file"] {
 
 button,
 .path-picker {
+	position: relative;
 	width: 200px;
 	height: 55px;
 	font-size: 0.8rem;
@@ -152,4 +152,26 @@ button.tablinks {
 
 .tabcontent.active {
 	display: block;
+}
+
+.pulse {
+	animation: pulse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	25% {
+		transform: rotate(2deg);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+	75% {
+		transform: rotate(-2deg);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
